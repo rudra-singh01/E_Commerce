@@ -1,0 +1,60 @@
+    {
+        "products":[
+            {
+                "id": 1,
+                "name": "Immortal 200",
+                "image": "https://www.boat-lifestyle.com/cdn/shop/products/Untitled-1_bf68149e-5ab0-4761-8116-d558ef0e178a_800x.png?v=1679352411",
+                "price": 1969,
+                "description": "Leave your opponents begging for mercy as you show them who’s the real boss. Welcome, Immortal 200 gaming headphones. The 7.1 Channel Surround Sound is here to give you a theatre-like 360° audio experience. Its powerful 50mm drivers and boAt Signature Sound will make your gaming experience hit the roof.",
+                "category": "Headphone"
+            },
+            {
+                "id": 2,
+                "name": "Airpods 141",
+                "image": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/AD141-FI_Black01_600x.png?v=1698391770",
+                "price": 1199,
+                "description": "Leave your opponents begging for mercy as you show them who’s the real boss. Welcome, Immortal 200 gaming headphones. The 7.1 Channel Surround Sound is here to give you a theatre-like 360° audio experience. Its powerful 50mm drivers and boAt Signature Sound will make your gaming experience hit the roof.",
+                "category": "Earbuds"
+            },
+            {
+                "id": 3,
+                "name": "Nirvana Space",
+                "image": "https://www.boat-lifestyle.com/cdn/shop/files/niravana_space_main_img_v2_800x.jpg?v=1721368479",
+                "price": 1999,
+                "description": "Leave your opponents begging for mercy as you show them who’s the real boss. Welcome, Immortal 200 gaming headphones. The 7.1 Channel Surround Sound is here to give you a theatre-like 360° audio experience. Its powerful 50mm drivers and boAt Signature Sound will make your gaming experience hit the roof.",
+                "category": "Earbuds"
+            },
+            {
+                "id": 4,
+                "name": "Rockerz 551ANC",
+                "image": "https://www.boat-lifestyle.com/cdn/shop/products/Nirvana551ANCPackaging1.3_800x.png?v=1681413243",
+                "price": 2999,
+                "description": "Leave your opponents begging for mercy as you show them who’s the real boss. Welcome, Immortal 200 gaming headphones. The 7.1 Channel Surround Sound is here to give you a theatre-like 360° audio experience. Its powerful 50mm drivers and boAt Signature Sound will make your gaming experience hit the roof.",
+                "category": "Headphone"
+            },
+            {
+                "id": 5,
+                "name": "Rockers 109",
+                "image": "https://www.boat-lifestyle.com/cdn/shop/files/Rockerz_109.1752-removebg-preview_500x.png?v=1691659034",
+                "price": 1199,
+                "description": "Leave your opponents begging for mercy as you show them who’s the real boss. Welcome, Immortal 200 gaming headphones. The 7.1 Channel Surround Sound is here to give you a theatre-like 360° audio experience. Its powerful 50mm drivers and boAt Signature Sound will make your gaming experience hit the roof.",
+                "category": "Neckbands"
+            },
+            {
+                "id": 6,
+                "name": "Party Pals 195",
+                "image": "https://www.boat-lifestyle.com/cdn/shop/files/PartyPal195_600x.png?v=1698909092",
+                "price": 1969,
+                "description": "Leave your opponents begging for mercy as you show them who’s the real boss. Welcome, Immortal 200 gaming headphones. The 7.1 Channel Surround Sound is here to give you a theatre-like 360° audio experience. Its powerful 50mm drivers and boAt Signature Sound will make your gaming experience hit the roof.",
+                "category": "Speaker"
+            },
+            {
+                "id": 7,
+                "name": "Lunar Pro Lite",
+                "image": "https://www.boat-lifestyle.com/cdn/shop/files/LunarProLTE-FI_Brown01_600x.png?v=1702440642",
+                "price": 1969,
+                "description": "Leave your opponents begging for mercy as you show them who’s the real boss. Welcome, Immortal 200 gaming headphones. The 7.1 Channel Surround Sound is here to give you a theatre-like 360° audio experience. Its powerful 50mm drivers and boAt Signature Sound will make your gaming experience hit the roof.",
+                "category": "Smart Watch"
+            }
+        ]
+    }
