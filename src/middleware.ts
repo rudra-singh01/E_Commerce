@@ -27,6 +27,6 @@ export const config = {
     "/About",
     "/Shop",
     "/Contact",
-    "/Cart"
+    "/AddToCart"
   ]
 };

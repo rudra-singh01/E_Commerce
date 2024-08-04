@@ -5,7 +5,8 @@ import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { PinContainer } from "@/components/ui/3d-pin";
 import team from "@/data/courses.json";
 import Image from "next/image";
-
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
 const content = [
   {
     title: "Our Story",
@@ -79,6 +80,7 @@ function Page() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="z-10"
         >
           <StickyScroll content={content} />
         </motion.div>
@@ -98,7 +100,7 @@ function Page() {
               <PinContainer
                 key={data.name}
                 title={data.role}
-                href="https://twitter.com/mannupaaji"
+                href="https://github.com/rudra-singh01/rudra-singh01"
               >
                 <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
                   <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
@@ -133,13 +135,15 @@ function Page() {
             feedback you may have.
           </p>
           <a
-            href="mailto:support@ecommerce.com"
+            href="/Contact"
             className="bg-blue-600 px-6 py-3 rounded-md hover:bg-blue-700 transition"
           >
             Contact Us
           </a>
         </motion.section>
       </div>
+      <ShootingStars />
+      <StarsBackground />
     </div>
   );
 }

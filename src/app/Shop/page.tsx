@@ -5,24 +5,27 @@ import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { motion } from "framer-motion";
 import products from "@/ProductsData/Products.json";
 
+const categories = [
+  "All",
+  "Headphone",
+  "Speaker",
+  "Neckbands",
+  "Earbuds",
+  "Smart Watch",
+];
 
-const categories = ["All", "Headphone", "Speaker", "Neckbands", "Earbuds", "Smart Watch"];
-
-function Page() {
+function Cart() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const cart = [];
   const filteredProducts = products.products.filter((product) =>
     selectedCategory === "All" ? true : product.category === selectedCategory
   );
   const AddToCart = (product: any) => {
-    // Assuming `products` is a list of product objects and `products.products` is the correct path
-    const selected = products.products.find((p) => p.id === product.id);
-    if (selected) {
-      cart.push(selected);
-      console.log("Added to cart:", selected);
-    }
-    
-}
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log("Added to cart:", product);
+};
 
   return (
     <div className="min-h-screen bg-black py-12 flex flex-col gap-8">
@@ -35,7 +38,9 @@ function Page() {
         {/* Header Section */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white">Our Shop</h1>
-          <p className="text-lg text-white">Explore our wide range of products.</p>
+          <p className="text-lg text-white">
+            Explore our wide range of products.
+          </p>
         </div>
 
         {/* Filter Section */}
@@ -81,8 +86,11 @@ function Page() {
               <p className="text-sm text-neutral-600 dark:text-neutral-400 text-center">
                 {product.description}
               </p>
-              <button onClick={()=>AddToCart(product)} className="px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-teal-500">
-               Add TO Cart
+              <button
+                onClick={() => AddToCart(product)}
+                className="px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-teal-500"
+              >
+                Add TO Cart
               </button>
               <button className="px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-teal-500">
                 Buy Now: ₹{product.price}
@@ -95,4 +103,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Cart;
