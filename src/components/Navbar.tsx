@@ -8,7 +8,7 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import products from "@/ProductsData/Products.json";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
@@ -35,14 +35,13 @@ function Navbar() {
   };
 
   const handleCartClick = () => {
-    router.push('/AddToCart');
+    router.push("/AddToCart");
   };
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     setCartCount(cart.length);
   }, []);
-
 
   useEffect(() => {
     if (searchTerm) {
@@ -103,7 +102,10 @@ function Navbar() {
               )}
             </div>
             <button onClick={handleCartClick} className="relative">
-              <FontAwesomeIcon icon={faShoppingCart} className="hover:text-[#dadada] text-xl" />
+              <FontAwesomeIcon
+                icon={faShoppingCart}
+                className="hover:text-[#dadada] text-xl"
+              />
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">
                   {cartCount}
