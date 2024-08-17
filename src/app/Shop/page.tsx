@@ -4,6 +4,7 @@ import Image from "next/image";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { motion } from "framer-motion";
 import products from "@/ProductsData/Products.json";
+import { useRouter } from "next/navigation";
 
 const categories = [
   "All",
@@ -14,18 +15,39 @@ const categories = [
   "Smart Watch",
 ];
 
+type Product = {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  description: string;
+  category: string;
+};
+
 function Cart() {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [buy, setBuy] = useState<Product[]>([]);
   const cart = [];
   const filteredProducts = products.products.filter((product) =>
     selectedCategory === "All" ? true : product.category === selectedCategory
   );
   const AddToCart = (product: any) => {
-    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
     cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
     console.log("Added to cart:", product);
-};
+  };
+  const BuyNow = (product: Product) => {
+    let currentBuy = JSON.parse(
+      localStorage.getItem("buy") || "[]"
+    ) as Product[]; // retrieve existing items in buy array
+    currentBuy.push(product); // add the new product to the array
+    localStorage.setItem("buy", JSON.stringify(currentBuy)); // store the updated array in localStorage
+    console.log("Selected Product", product);
+    setBuy(currentBuy); // update the buy state with the currentBuy array
+    router.push("/BuyNow"); // navigate to the BuyNow page
+  };
 
   return (
     <div className="min-h-screen bg-black py-12 flex flex-col gap-8">
@@ -92,7 +114,10 @@ function Cart() {
               >
                 Add TO Cart
               </button>
-              <button className="px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-teal-500">
+              <button
+                onClick={() => BuyNow(product)}
+                className="px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-teal-500"
+              >
                 Buy Now: ₹{product.price}
               </button>
             </BackgroundGradient>
